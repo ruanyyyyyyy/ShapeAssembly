@@ -748,7 +748,7 @@ def loadConfigFile(exp_name):
     
 # Set-up new experiment directory
 def writeConfigFile(args):
-    os.system(f'mkdir {outpath} > /dev/null 2>&1')
+    os.system(f'mkdir {outpath} > /dev/null 2>&1') # >> /dev/null redirects standard output (stdout) to /dev/null, which discards it.
     os.system(f'mkdir {outpath}/{args.exp_name} > /dev/null 2>&1')
     os.system(f'mkdir {outpath}/{args.exp_name}/plots > /dev/null 2>&1')
     os.system(f'mkdir {outpath}/{args.exp_name}/plots/train > /dev/null 2>&1')
