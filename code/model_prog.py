@@ -252,7 +252,7 @@ class ENCGRU(nn.Module):
     def __init__(self, hidden_dim):
         super(ENCGRU, self).__init__()
 
-        self.gru = nn.GRU(hidden_dim, hidden_dim, batch_first = True)        
+        self.gru = nn.GRU(hidden_dim, hidden_dim, batch_first = True) # num_layers: default 1, batch_first – If True, then the input and output tensors are provided as (batch, seq, feature)        
         self.inp_net = MLP(INPUT_DIM, hidden_dim, hidden_dim, hidden_dim)
         self.sampler = Sampler(hidden_dim, hidden_dim)
         self.hidden_dim = hidden_dim
